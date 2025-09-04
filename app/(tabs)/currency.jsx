@@ -8,7 +8,7 @@ const CURRENCIES = ["USD","INR","EUR","GBP","JPY","AUD","CAD","SGD","CHF","CNY",
 export default function CurrencyConverterScreen() {
   const navigation = useNavigation();
 
-  // put a header button to go back to Calculator
+  
   useLayoutEffect(() => {
     navigation.setOptions({
       title: "Currency Converter",
@@ -24,7 +24,7 @@ export default function CurrencyConverterScreen() {
   const [result, setResult] = useState(null);
   const [lastUpdated, setLastUpdated] = useState("");
 
-  // Free API (no key). Base = USD.
+
   const API_URL = "https://open.er-api.com/v6/latest/USD";
 
   const fetchRates = async () => {
@@ -49,7 +49,7 @@ export default function CurrencyConverterScreen() {
     fetchRates();
   }, []);
 
-  // Convert whenever inputs change and rates are ready
+  
   useEffect(() => {
     if (!rates) return;
     const a = parseFloat(amount || "0");
@@ -57,8 +57,7 @@ export default function CurrencyConverterScreen() {
       setResult(null);
       return;
     }
-    // convert amount FROM -> TO using USD as base:
-    // value_in_TO = (amount / rate_FROM) * rate_TO
+    
     const fromRate = rates[fromCurrency];
     const toRate = rates[toCurrency];
     if (fromRate && toRate) {

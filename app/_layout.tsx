@@ -1,4 +1,4 @@
-// app/(tabs)/_layout.tsx
+
 import { Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
 
@@ -9,9 +9,9 @@ export default function TabLayout() {
         headerShown: false,
       }}
     >
-      {/* Calculator Tab */}
+      
       <Tabs.Screen
-        name="index" // this points to app/(tabs)/index.jsx
+        name="index" 
         options={{
           title: "Calculator",
           tabBarIcon: ({ color, size }) => (
@@ -20,9 +20,9 @@ export default function TabLayout() {
         }}
       />
 
-      {/* Currency Converter Tab */}
+    
       <Tabs.Screen
-        name="currency" // this points to app/(tabs)/currency.jsx
+        name="currency" 
         options={{
           title: "Currency Converter",
           tabBarIcon: ({ color, size }) => (

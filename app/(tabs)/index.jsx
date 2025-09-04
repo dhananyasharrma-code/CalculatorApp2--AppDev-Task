@@ -11,7 +11,7 @@ export default function CalculatorScreen({ navigation }) {
       setResult("");
     } else if (value === "=") {
       try {
-        // Evaluate expression safely
+        
         const evalResult = eval(input);
         setResult(evalResult.toString());
       } catch {
